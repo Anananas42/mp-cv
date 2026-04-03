@@ -35,7 +35,7 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
             <li key={s.id}>
               <a
                 href={`#${s.id}`}
-                className="text-sm text-slate-300 hover:text-teal-accent-light transition-colors"
+                className="text-sm text-dark-text-muted hover:text-teal-accent-light transition-colors"
               >
                 {intl.formatMessage({ id: s.key })}
               </a>
@@ -45,7 +45,7 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
 
         <button
           type="button"
-          className="md:hidden text-slate-300 hover:text-white"
+          className="md:hidden text-dark-text-muted hover:text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -77,7 +77,7 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
         <button
           type="button"
           onClick={onToggleLocale}
-          className="text-sm font-medium text-slate-300 hover:text-white border border-slate-600 rounded px-2 py-1 transition-colors"
+          className="text-sm font-medium text-dark-text-muted hover:text-white border border-dark-border rounded px-2 py-1 transition-colors"
         >
           {locale === "cs" ? "EN" : "CZ"}
         </button>
@@ -89,7 +89,7 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
             <li key={s.id}>
               <a
                 href={`#${s.id}`}
-                className="block text-slate-300 hover:text-white transition-colors"
+                className="block text-dark-text-muted hover:text-white transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {intl.formatMessage({ id: s.key })}

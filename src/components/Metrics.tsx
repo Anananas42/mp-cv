@@ -32,7 +32,7 @@ export default function Metrics() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-slate-50 py-16 px-6">
+    <section ref={ref} className="bg-dark-card py-16 px-6">
       <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-8">
         {metrics.map((m, i) => (
           <div
@@ -43,7 +43,7 @@ export default function Metrics() {
             <div className="text-3xl md:text-4xl font-bold text-teal-accent font-serif">
               {intl.formatMessage({ id: m.valueKey })}
             </div>
-            <div className="mt-2 text-sm text-slate-600 uppercase tracking-wide">
+            <div className="mt-2 text-sm text-dark-text-muted uppercase tracking-wide">
               {intl.formatMessage({ id: m.labelKey })}
             </div>
           </div>

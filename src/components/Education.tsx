@@ -27,7 +27,7 @@ export default function Education() {
     <section id="education" className="py-20 px-6">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal>
-          <h2 className="text-3xl font-bold text-slate-900">
+          <h2 className="text-3xl font-bold text-dark-text">
             {intl.formatMessage({ id: "education.title" })}
           </h2>
         </ScrollReveal>
@@ -44,7 +44,7 @@ export default function Education() {
 
             return (
               <ScrollReveal key={item.prefix} delay={i * 100}>
-                <div className="bg-white border border-slate-200 rounded-lg p-5 h-full">
+                <div className="bg-dark-elevated border border-dark-border rounded-lg p-5 h-full">
                   <div className="flex items-start gap-3">
                     <div className="p-2 bg-teal-accent/10 rounded-lg flex-shrink-0">
                       <svg
@@ -63,8 +63,10 @@ export default function Education() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-slate-900">{title}</h3>
-                      {institution && <p className="text-sm text-slate-600 mt-1">{institution}</p>}
+                      <h3 className="font-semibold text-dark-text">{title}</h3>
+                      {institution && (
+                        <p className="text-sm text-dark-text-muted mt-1">{institution}</p>
+                      )}
                       {year && <p className="text-sm text-teal-accent mt-1">{year}</p>}
                     </div>
                   </div>

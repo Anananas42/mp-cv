@@ -10,7 +10,7 @@ export default function Footer() {
           {intl.formatMessage({ id: "footer.cta" })}
         </h2>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-6 text-slate-400">
+        <div className="mt-8 flex flex-wrap justify-center gap-6 text-dark-text-faint">
           <a
             href={`mailto:${intl.formatMessage({ id: "hero.email" })}`}
             className="hover:text-white transition-colors"
@@ -33,7 +33,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="mt-10 text-sm text-slate-600">
+        <p className="mt-10 text-sm text-dark-text-faint">
           {intl.formatMessage({ id: "footer.copyright" })}
         </p>
       </div>

@@ -13,7 +13,7 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
       <button
         type="button"
         onClick={onToggleLocale}
-        className="absolute top-6 right-6 text-sm font-medium text-slate-400 hover:text-white border border-slate-600 rounded px-3 py-1.5 transition-colors"
+        className="absolute top-6 right-6 text-sm font-medium text-dark-text-faint hover:text-white border border-dark-border rounded px-3 py-1.5 transition-colors"
       >
         {locale === "cs" ? "EN" : "CZ"}
       </button>
@@ -22,14 +22,14 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
         <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight">
           {intl.formatMessage({ id: "hero.name" })}
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed">
+        <p className="mt-6 text-lg md:text-xl text-dark-text-muted leading-relaxed">
           {intl.formatMessage({ id: "hero.title" })}
         </p>
         <p className="mt-2 text-teal-accent-light text-lg font-medium">
           {intl.formatMessage({ id: "hero.subtitle" })}
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-400">
+        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-dark-text-faint">
           <span className="flex items-center gap-2">
             <svg
               aria-hidden="true"
@@ -109,7 +109,7 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
 
       <a
         href="#summary"
-        className="absolute bottom-8 text-slate-500 hover:text-white transition-colors animate-bounce"
+        className="absolute bottom-8 text-dark-text-faint hover:text-white transition-colors animate-bounce"
       >
         <span className="sr-only">{intl.formatMessage({ id: "hero.scrollDown" })}</span>
         <svg

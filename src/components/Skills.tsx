@@ -26,31 +26,31 @@ export default function Skills() {
   const intl = useIntl();
 
   return (
-    <section id="skills" className="py-20 px-6 bg-slate-50">
+    <section id="skills" className="py-20 px-6 bg-dark-card">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal>
-          <h2 className="text-3xl font-bold text-slate-900">
+          <h2 className="text-3xl font-bold text-dark-text">
             {intl.formatMessage({ id: "skills.title" })}
           </h2>
         </ScrollReveal>
 
         <div className="mt-10 grid md:grid-cols-2 gap-12">
           <ScrollReveal delay={100}>
-            <h3 className="text-lg font-semibold text-slate-900 mb-6">
+            <h3 className="text-lg font-semibold text-dark-text mb-6">
               {intl.formatMessage({ id: "skills.languages" })}
             </h3>
             <div className="space-y-4">
               {languages.map((lang) => (
                 <div key={lang.key}>
                   <div className="flex justify-between text-sm mb-1.5">
-                    <span className="font-medium text-slate-700">
+                    <span className="font-medium text-dark-text-muted">
                       {intl.formatMessage({ id: `lang.${lang.key}` })}
                     </span>
-                    <span className="text-slate-500">
+                    <span className="text-dark-text-faint">
                       {intl.formatMessage({ id: `lang.${lang.key}Level` })}
                     </span>
                   </div>
-                  <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+                  <div className="h-2 bg-dark-border rounded-full overflow-hidden">
                     <div
                       className="h-full bg-teal-accent rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${lang.level}%` }}
@@ -62,14 +62,14 @@ export default function Skills() {
           </ScrollReveal>
 
           <ScrollReveal delay={200}>
-            <h3 className="text-lg font-semibold text-slate-900 mb-6">
+            <h3 className="text-lg font-semibold text-dark-text mb-6">
               {intl.formatMessage({ id: "skills.tech" })}
             </h3>
             <div className="flex flex-wrap gap-2">
               {technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 text-sm bg-white border border-slate-200 rounded-full text-slate-700"
+                  className="px-3 py-1.5 text-sm bg-dark-elevated border border-dark-border rounded-full text-dark-text-muted"
                 >
                   {tech}
                 </span>
