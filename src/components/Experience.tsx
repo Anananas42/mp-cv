@@ -46,49 +46,51 @@ export default function Experience() {
                       }`}
                     />
 
-                    <button
-                      type="button"
-                      onClick={() => toggle(i)}
-                      className="w-full text-left bg-surface-elevated rounded-lg border border-edge p-6 hover:border-accent/40 hover:shadow-md transition-all"
-                    >
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <div>
-                          <h3 className="text-lg font-bold text-on-surface">
-                            {intl.formatMessage({ id: `${exp.prefix}.company` })}
-                          </h3>
-                          <p className="text-accent font-medium">
-                            {intl.formatMessage({ id: `${exp.prefix}.role` })}
-                          </p>
+                    <div className="bg-surface-elevated rounded-lg border border-edge hover:border-accent/40 hover:shadow-md transition-all">
+                      <button
+                        type="button"
+                        onClick={() => toggle(i)}
+                        className="w-full text-left p-6 cursor-pointer"
+                      >
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                          <div>
+                            <h3 className="text-lg font-bold text-on-surface">
+                              {intl.formatMessage({ id: `${exp.prefix}.company` })}
+                            </h3>
+                            <p className="text-accent font-medium">
+                              {intl.formatMessage({ id: `${exp.prefix}.role` })}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <span className="text-sm text-on-surface-faint whitespace-nowrap">
+                              {intl.formatMessage({ id: `${exp.prefix}.period` })}
+                            </span>
+                            <svg
+                              aria-hidden="true"
+                              className={`w-5 h-5 text-on-surface-faint transition-transform flex-shrink-0 ${
+                                isOpen ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <span className="text-sm text-on-surface-faint whitespace-nowrap">
-                            {intl.formatMessage({ id: `${exp.prefix}.period` })}
-                          </span>
-                          <svg
-                            aria-hidden="true"
-                            className={`w-5 h-5 text-on-surface-faint transition-transform flex-shrink-0 ${
-                              isOpen ? "rotate-180" : ""
-                            }`}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
+                      </button>
 
                       <div
                         className={`overflow-hidden transition-all duration-300 ${
-                          isOpen ? "max-h-[500px] mt-4 opacity-100" : "max-h-0 opacity-0"
+                          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
                         }`}
                       >
-                        <div className="border-t border-edge-light pt-4 space-y-3">
+                        <div className="border-t border-edge-light mx-6 pb-6 pt-4 space-y-3">
                           <p className="text-sm font-medium text-on-surface-faint uppercase tracking-wide">
                             {intl.formatMessage({ id: `${exp.prefix}.scope` })}
                           </p>
@@ -105,7 +107,7 @@ export default function Experience() {
                           </ul>
                         </div>
                       </div>
-                    </button>
+                    </div>
                   </div>
                 </ScrollReveal>
               );
