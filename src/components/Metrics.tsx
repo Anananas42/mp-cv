@@ -32,7 +32,7 @@ export default function Metrics() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-dark-card py-16 px-6">
+    <section ref={ref} className="bg-surface-card py-16 px-6">
       <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-8">
         {metrics.map((m, i) => (
           <div
@@ -40,10 +40,10 @@ export default function Metrics() {
             className={`text-center ${triggered ? "animate-count-up" : "opacity-0"}`}
             style={{ animationDelay: `${i * 150}ms` }}
           >
-            <div className="text-3xl md:text-4xl font-bold text-teal-accent font-serif">
+            <div className="text-3xl md:text-4xl font-bold text-accent font-serif">
               {intl.formatMessage({ id: m.valueKey })}
             </div>
-            <div className="mt-2 text-sm text-dark-text-muted uppercase tracking-wide">
+            <div className="mt-2 text-sm text-on-surface-muted uppercase tracking-wide">
               {intl.formatMessage({ id: m.labelKey })}
             </div>
           </div>

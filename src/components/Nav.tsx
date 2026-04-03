@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavProps {
   locale: string;
   onToggleLocale: () => void;
+  theme: string;
+  onToggleTheme: () => void;
 }
 
 const sections = [
@@ -14,7 +17,7 @@ const sections = [
   { id: "contact", key: "nav.contact" },
 ] as const;
 
-export default function Nav({ locale, onToggleLocale }: NavProps) {
+export default function Nav({ locale, onToggleLocale, theme, onToggleTheme }: NavProps) {
   const intl = useIntl();
   const [visible, setVisible] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,14 +31,14 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
   if (!visible) return null;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm border-b border-white/10 animate-fade-in-up">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-hero/95 backdrop-blur-sm border-b border-white/10 animate-fade-in-up">
       <div className="mx-auto max-w-5xl flex items-center justify-between px-6 py-3">
         <ul className="hidden md:flex gap-6">
           {sections.map((s) => (
             <li key={s.id}>
               <a
                 href={`#${s.id}`}
-                className="text-sm text-dark-text-muted hover:text-teal-accent-light transition-colors"
+                className="text-sm text-on-surface-muted hover:text-accent-light transition-colors"
               >
                 {intl.formatMessage({ id: s.key })}
               </a>
@@ -45,7 +48,7 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
 
         <button
           type="button"
-          className="md:hidden text-dark-text-muted hover:text-white"
+          className="md:hidden text-on-surface-muted hover:text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -74,22 +77,29 @@ export default function Nav({ locale, onToggleLocale }: NavProps) {
           </svg>
         </button>
 
-        <button
-          type="button"
-          onClick={onToggleLocale}
-          className="text-sm font-medium text-dark-text-muted hover:text-white border border-dark-border rounded px-2 py-1 transition-colors"
-        >
-          {locale === "cs" ? "EN" : "CZ"}
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle
+            theme={theme}
+            onToggle={onToggleTheme}
+            className="text-on-surface-muted hover:text-white border border-edge"
+          />
+          <button
+            type="button"
+            onClick={onToggleLocale}
+            className="text-base font-medium text-on-surface-muted hover:text-white border border-edge rounded-lg px-5 py-2.5 transition-colors"
+          >
+            {locale === "cs" ? "EN" : "CZ"}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
-        <ul className="md:hidden bg-navy border-t border-white/10 px-6 py-4 space-y-3">
+        <ul className="md:hidden bg-hero border-t border-white/10 px-6 py-4 space-y-3">
           {sections.map((s) => (
             <li key={s.id}>
               <a
                 href={`#${s.id}`}
-                className="block text-dark-text-muted hover:text-white transition-colors"
+                className="block text-on-surface-muted hover:text-white transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {intl.formatMessage({ id: s.key })}

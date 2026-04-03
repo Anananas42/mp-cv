@@ -1,35 +1,45 @@
 import { useIntl } from "react-intl";
+import ThemeToggle from "./ThemeToggle";
 
 interface HeroProps {
   locale: string;
   onToggleLocale: () => void;
+  theme: string;
+  onToggleTheme: () => void;
 }
 
-export default function Hero({ locale, onToggleLocale }: HeroProps) {
+export default function Hero({ locale, onToggleLocale, theme, onToggleTheme }: HeroProps) {
   const intl = useIntl();
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-navy text-white px-6">
-      <button
-        type="button"
-        onClick={onToggleLocale}
-        className="absolute top-6 right-6 text-sm font-medium text-dark-text-faint hover:text-white border border-dark-border rounded px-3 py-1.5 transition-colors"
-      >
-        {locale === "cs" ? "EN" : "CZ"}
-      </button>
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-hero text-hero-text px-6 transition-colors duration-300">
+      <div className="absolute top-6 right-6 flex items-center gap-3">
+        <ThemeToggle
+          theme={theme}
+          onToggle={onToggleTheme}
+          className="text-hero-text-faint hover:text-hero-text border border-hero-text-faint/30"
+        />
+        <button
+          type="button"
+          onClick={onToggleLocale}
+          className="text-base font-medium text-hero-text-faint hover:text-hero-text border border-hero-text-faint/30 rounded-lg px-5 py-2.5 transition-colors"
+        >
+          {locale === "cs" ? "EN" : "CZ"}
+        </button>
+      </div>
 
       <div className="text-center max-w-3xl">
         <h1 className="font-serif text-5xl md:text-7xl font-bold tracking-tight">
           {intl.formatMessage({ id: "hero.name" })}
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-dark-text-muted leading-relaxed">
+        <p className="mt-6 text-lg md:text-xl text-hero-text-muted leading-relaxed">
           {intl.formatMessage({ id: "hero.title" })}
         </p>
-        <p className="mt-2 text-teal-accent-light text-lg font-medium">
+        <p className="mt-2 text-accent-light text-lg font-medium">
           {intl.formatMessage({ id: "hero.subtitle" })}
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-dark-text-faint">
+        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-hero-text-faint">
           <span className="flex items-center gap-2">
             <svg
               aria-hidden="true"
@@ -55,7 +65,7 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
           </span>
           <a
             href={`tel:${intl.formatMessage({ id: "hero.phone" })}`}
-            className="flex items-center gap-2 hover:text-white transition-colors"
+            className="flex items-center gap-2 hover:text-hero-text transition-colors"
           >
             <svg
               aria-hidden="true"
@@ -75,7 +85,7 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
           </a>
           <a
             href={`mailto:${intl.formatMessage({ id: "hero.email" })}`}
-            className="flex items-center gap-2 hover:text-white transition-colors"
+            className="flex items-center gap-2 hover:text-hero-text transition-colors"
           >
             <svg
               aria-hidden="true"
@@ -97,7 +107,7 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
             href="https://www.linkedin.com/in/miroslav-pazderka/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-white transition-colors"
+            className="flex items-center gap-2 hover:text-hero-text transition-colors"
           >
             <svg aria-hidden="true" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -109,7 +119,7 @@ export default function Hero({ locale, onToggleLocale }: HeroProps) {
 
       <a
         href="#summary"
-        className="absolute bottom-8 text-dark-text-faint hover:text-white transition-colors animate-bounce"
+        className="absolute bottom-8 text-hero-text-faint hover:text-hero-text transition-colors animate-bounce"
       >
         <span className="sr-only">{intl.formatMessage({ id: "hero.scrollDown" })}</span>
         <svg

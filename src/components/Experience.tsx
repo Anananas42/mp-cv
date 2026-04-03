@@ -21,17 +21,17 @@ export default function Experience() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="experience" className="py-20 px-6 bg-dark-card">
+    <section id="experience" className="py-20 px-6 bg-surface-card">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal>
-          <h2 className="text-3xl font-bold text-dark-text">
+          <h2 className="text-3xl font-bold text-on-surface">
             {intl.formatMessage({ id: "experience.title" })}
           </h2>
         </ScrollReveal>
 
         <div className="mt-12 relative">
           {/* Timeline line — desktop only */}
-          <div className="hidden md:block absolute left-[7px] top-2 bottom-2 w-px bg-dark-border" />
+          <div className="hidden md:block absolute left-[7px] top-2 bottom-2 w-px bg-edge" />
 
           <div className="space-y-6">
             {experiences.map((exp, i) => {
@@ -42,33 +42,31 @@ export default function Experience() {
                     {/* Timeline dot */}
                     <div
                       className={`hidden md:block absolute left-0 top-5 h-[15px] w-[15px] rounded-full border-2 transition-colors ${
-                        isOpen
-                          ? "bg-teal-accent border-teal-accent"
-                          : "bg-dark-card border-dark-border"
+                        isOpen ? "bg-accent border-accent" : "bg-surface-card border-edge"
                       }`}
                     />
 
                     <button
                       type="button"
                       onClick={() => toggle(i)}
-                      className="w-full text-left bg-dark-elevated rounded-lg border border-dark-border p-6 hover:border-teal-accent/40 hover:shadow-md transition-all"
+                      className="w-full text-left bg-surface-elevated rounded-lg border border-edge p-6 hover:border-accent/40 hover:shadow-md transition-all"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <div>
-                          <h3 className="text-lg font-bold text-dark-text">
+                          <h3 className="text-lg font-bold text-on-surface">
                             {intl.formatMessage({ id: `${exp.prefix}.company` })}
                           </h3>
-                          <p className="text-teal-accent font-medium">
+                          <p className="text-accent font-medium">
                             {intl.formatMessage({ id: `${exp.prefix}.role` })}
                           </p>
                         </div>
                         <div className="flex items-center gap-3">
-                          <span className="text-sm text-dark-text-faint whitespace-nowrap">
+                          <span className="text-sm text-on-surface-faint whitespace-nowrap">
                             {intl.formatMessage({ id: `${exp.prefix}.period` })}
                           </span>
                           <svg
                             aria-hidden="true"
-                            className={`w-5 h-5 text-dark-text-faint transition-transform flex-shrink-0 ${
+                            className={`w-5 h-5 text-on-surface-faint transition-transform flex-shrink-0 ${
                               isOpen ? "rotate-180" : ""
                             }`}
                             fill="none"
@@ -90,17 +88,17 @@ export default function Experience() {
                           isOpen ? "max-h-[500px] mt-4 opacity-100" : "max-h-0 opacity-0"
                         }`}
                       >
-                        <div className="border-t border-dark-border-light pt-4 space-y-3">
-                          <p className="text-sm font-medium text-dark-text-faint uppercase tracking-wide">
+                        <div className="border-t border-edge-light pt-4 space-y-3">
+                          <p className="text-sm font-medium text-on-surface-faint uppercase tracking-wide">
                             {intl.formatMessage({ id: `${exp.prefix}.scope` })}
                           </p>
                           <ul className="space-y-2">
                             {exp.bulletIds.map((bulletId) => (
                               <li
                                 key={bulletId}
-                                className="flex gap-3 text-dark-text-muted leading-relaxed"
+                                className="flex gap-3 text-on-surface-muted leading-relaxed"
                               >
-                                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-teal-accent" />
+                                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                                 <span>{intl.formatMessage({ id: bulletId })}</span>
                               </li>
                             ))}

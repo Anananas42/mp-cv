@@ -27,7 +27,7 @@ export default function Education() {
     <section id="education" className="py-20 px-6">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal>
-          <h2 className="text-3xl font-bold text-dark-text">
+          <h2 className="text-3xl font-bold text-on-surface">
             {intl.formatMessage({ id: "education.title" })}
           </h2>
         </ScrollReveal>
@@ -44,12 +44,12 @@ export default function Education() {
 
             return (
               <ScrollReveal key={item.prefix} delay={i * 100}>
-                <div className="bg-dark-elevated border border-dark-border rounded-lg p-5 h-full">
+                <div className="bg-surface-elevated border border-edge rounded-lg p-5 h-full">
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-teal-accent/10 rounded-lg flex-shrink-0">
+                    <div className="p-2 bg-accent/10 rounded-lg flex-shrink-0">
                       <svg
                         aria-hidden="true"
-                        className="w-5 h-5 text-teal-accent"
+                        className="w-5 h-5 text-accent"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -63,11 +63,11 @@ export default function Education() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-dark-text">{title}</h3>
+                      <h3 className="font-semibold text-on-surface">{title}</h3>
                       {institution && (
-                        <p className="text-sm text-dark-text-muted mt-1">{institution}</p>
+                        <p className="text-sm text-on-surface-muted mt-1">{institution}</p>
                       )}
-                      {year && <p className="text-sm text-teal-accent mt-1">{year}</p>}
+                      {year && <p className="text-sm text-accent mt-1">{year}</p>}
                     </div>
                   </div>
                 </div>
