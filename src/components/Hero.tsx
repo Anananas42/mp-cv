@@ -104,7 +104,7 @@ export default function Hero({ locale, onToggleLocale, theme, onToggleTheme }: H
             {intl.formatMessage({ id: "hero.email" })}
           </a>
           <a
-            href="https://www.linkedin.com/in/miroslav-pazderka/"
+            href="https://www.linkedin.com/in/miroslav-pazderka-4784628a/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-hero-text transition-colors"

@@ -24,7 +24,7 @@ export default function Footer() {
             {intl.formatMessage({ id: "hero.phone" })}
           </a>
           <a
-            href="https://www.linkedin.com/in/miroslav-pazderka/"
+            href="https://www.linkedin.com/in/miroslav-pazderka-4784628a/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-hero-text transition-colors"
